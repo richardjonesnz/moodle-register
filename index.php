@@ -6,7 +6,6 @@
  * @copyright 2019 Richard Jones https://richardnz.net
  * @license Creative Commons CC-BY 3.0 NZ
  */
-use classes\utility;
 require_once 'config_inc.php';
 $template = $M->loadTemplate('welcomepage');
 $data = new stdClass;
