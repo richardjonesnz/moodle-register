@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-</head>
-<body>
 <?php
-require 'mustache/src/Mustache/Autoloader.php';
-Mustache_Autoloader::register();
-
-  $m = new Mustache_Engine(['loader' => new
-        Mustache_Loader_FilesystemLoader(dirname(__FILE__) .
-        '/templates')]);
-
-$template = $m->loadTemplate('welcomepage');
+/**
+ * Registration login/register page.
+ *
+ * @package moodle-registration
+ * @copyright 2019 Richard Jones https://richardnz.net
+ * @license Creative Commons CC-BY 3.0 NZ
+ */
+use classes\utility;
+require_once 'config_inc.php';
+$template = $M->loadTemplate('welcomepage');
 $data = new stdClass;
-$data->title = 'My registration page';
-$data->body = 'Welcome to the site.';
+$data->pagetitle = 'Home page';
+$data->heading = 'User registration page';
+$data->greeting = 'Welcome ';
+$data->name = (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '';
+$data->body = 'This site allows you to manage your registration to our courses.  Please select from one of the links below';
+$data->navcardtitle = 'Navigation';
+$data->navcardbody = 'On other pages:';
+$data->links = \utility::fetch_links();
 $data->copyright = 'Richard 2019';
 echo $template->render($data);
 ?>
