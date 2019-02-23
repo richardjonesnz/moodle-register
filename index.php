@@ -1,12 +1,12 @@
 <?php
 /**
- * Registration login/register page.
+ * Registration home page.
  *
  * @package moodle-registration
  * @copyright 2019 Richard Jones https://richardnz.net
  * @license Creative Commons CC-BY 3.0 NZ
  */
-require_once 'config_inc.php';
+require_once 'includes/config_inc.php';
 $template = $M->loadTemplate('welcomepage');
 $data = new stdClass;
 $data->pagetitle = 'Home page';

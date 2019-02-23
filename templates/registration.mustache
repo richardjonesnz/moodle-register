@@ -13,16 +13,13 @@
     <div class="col-md-9">
       <h3>{{greeting}}{{name}}</h3>
       <p>{{body}}</p>
+        {{> registrationform}}
     </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title>">{{navcardtitle}}</h4>
-          <p class="card-text">{{navcardbody}}</p>
-          {{> links}}
-        </div>
-      </div>
-    </div>
+    <div>
+{{#errors}}
+  <p>error</p>
+{{/errors}}
+</div>
   </div>
   <br />
 <div>
