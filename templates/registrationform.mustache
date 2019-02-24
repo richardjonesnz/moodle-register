@@ -2,12 +2,34 @@
     Register a new user.
 }}
  <form method="post" action="./register.php">
-
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
-  <br><br>
-  <input type="submit" value="Submit">
+    <div class="form-group">
+      <label for="firstname">First name:</label>
+      <input type="text" class="form-control" name="firstname" value="{{firstname}}">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last name:</label>
+      <input type="text" class="form-control" name="lastname" value="{{lastname}}">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" name="email" value="{{email}}">
+    </div>
+      <div class="form-group">
+        <label for="sel1">Select country:</label>
+        <select class="form-control" name="country">
+          {{# country}}
+              <option>{{.}}</option>
+          {{/ country}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pwd1">Choose a password:</label>
+        <input type="password" class="form-control" name="pwd1" value="">
+      </div>
+      <div class="form-group">
+        <label for="pwd2">Choose a password:</label>
+        <input type="password" class="form-control" name="pwd2" value="">
+      </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>

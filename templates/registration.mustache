@@ -11,14 +11,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-      <h3>{{greeting}}{{name}}</h3>
+      <h3>{{heading}}</h3>
       <p>{{body}}</p>
         {{> registrationform}}
     </div>
-    <div>
-{{#errors}}
-  <p>error</p>
-{{/errors}}
+  </div>
+  {{#errors}}
+    <p class="text-danger">{{.}}</p>
+  {{/errors}}
 </div>
   </div>
   <br />
